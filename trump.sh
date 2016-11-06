@@ -18,3 +18,4 @@ do
 	break
     fi
 done
+printf "%s is a mess. %s is a big fat mistake.\n" $USER $USER

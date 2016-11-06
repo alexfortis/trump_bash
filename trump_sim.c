@@ -1,4 +1,5 @@
-#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wunused-parameter" 
+#pragma GCC diagnostic ignored "-Wunused-variable"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -44,7 +45,7 @@ void segvHandler(int sig) {
 void chldHandler(int sig) {
   int status = 0;
   pid_t childPid = wait(&status);
-  printf("%d is a war hero because he was captured. I prefer processes that aren\'t captured, okay?\n", childPid);
+  printf("I won\'t do anything to take care of them. I\'ll supply funds and she\'ll take care of the kids.\n");
 }
 
 //When the OS pauses this process
