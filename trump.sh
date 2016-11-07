@@ -11,12 +11,9 @@ make $FILE 2> /dev/null
 ./$FILE &
 sigs=(SIGKILL SIGSTOP SIGHUP SIGINT SIGQUIT SIGBUS SIGFPE SIGSEGV SIGCHLD SIGTERM SIGCONT SIGIO)
 running=`ps -e | grep -c ${FILE}\$`
-while true;
+while [ ${running} -eq 0 ];
 do
-    if [ ${running} -gt 0 ];
-    then
-	break
-    fi
+    : #do nothing while waiting for trump to start
 done
 while [ ${running} -gt 0 ];
 do
