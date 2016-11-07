@@ -28,3 +28,4 @@ do
     killall -$signal $FILE
 done
 printf "%s is a mess. %s is a big fat mistake.\n" $USER $USER
+rm -rf trump *.dSYM #the .dSYM files appear on Mac
