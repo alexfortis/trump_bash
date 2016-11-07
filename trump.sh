@@ -20,7 +20,7 @@ do
 done
 while [ ${running} -gt 0 ];
 do
-    signal=$(zenity --entry --title $TITLE --text "${sigs[@]}" --text "Choose a signal to send to Mr. Trump, or click Cancel to quit.")
+    signal=$(zenity --entry --title $TITLE --text "${sigs[@]}" --text "Choose a signal to send to Mr. Trump, or click Cancel to quit." 2> /dev/null)
     if [[ $? -eq 1 ]]; then
 	killall -KILL $FILE
 	break
