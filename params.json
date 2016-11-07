@@ -1,6 +1,6 @@
 {
   "name": "trump_bash",
   "tagline": "Terminal Based Donald Trump Simulator",
-  "body": "### ^[Tt]r(ump_[Bb])?ash$\r\n\r\nHave you ever wondered what would happen if Donald Trump were a process running on your computer? Wonder no more!\r\n\r\nImagine Donald Trump is stuck in your terminal, and all he can do is tweet at you. Your only way of communicating with him is by sending him signals.\r\n\r\n![trump_bash]\r\n(https://raw.githubusercontent.com/alexfortis/trump_bash/master/screenshot.png)\r\n\r\n- Written at HackAE on November 5-6, 2016\r\n- Used C to write the actual Trump program, bash scripting for the UI\r\n- Zenity is required for the UI; it can be downloaded from homebrew or the Linux package manager",
+  "body": "### ^[Tt]r(ump_[Bb])?ash$\r\n\r\nHave you ever wondered what would happen if Donald Trump were a process running on your computer? Wonder no more!\r\n\r\nImagine Donald Trump is stuck in your terminal, and all he can do is tweet at you. Your only way of communicating with him is by sending him signals.\r\n\r\n![trump_bash]\r\n(https://raw.githubusercontent.com/alexfortis/trump_bash/master/screenshot.png)\r\n\r\n- Written at HackAE on November 5-6, 2016\r\n- Used C to write the actual Trump program, bash scripting for the UI\r\n- Zenity is required for the UI\r\n    - Mac: download from homebrew\r\n    - Linux: download from the package manager if it's not already installed",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
