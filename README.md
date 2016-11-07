@@ -9,7 +9,7 @@ To run the program, just execute the trump.sh script.
 
 Notes:
 - On Mac, zenity windows show up behind the terminal window.
-- The regular expression in the title not only matches trump_bash but also trash.
+- The regular expression in the title not only matches trump_bash but also trash, because Trump is trash.
 
 Guide to signals:
 - SIGHUP is the hangup signal, sent when the controlling terminal exits.
