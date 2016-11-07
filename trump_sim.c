@@ -13,53 +13,53 @@
 
 //when the controlling terminal quits
 void hupHandler(int sig) {
-  printf("It is so nice that the shackles have been taken off me and I can now fight for America the way I want to.\n");
+  printf("It is so nice that the shackles have been taken off me and I can now fight for America the way I want to.\n\n");
 }
 
 //when the interrupt signal (ctrl+C) is sent
 void intHandler(int sig) {
-  printf("She went over time, I can go over too.\n");
+  printf("She went over time, I can go over too.\n\n");
 }
 
 //when the quit signal (ctrl+\) is sent
 void quitHandler(int sig) {
-  printf("I\'d never withdraw. I\'ve never withdrawn in my life. No, I\'m not quitting. I have tremendous support.\n");
+  printf("I\'d never withdraw. I\'ve never withdrawn in my life. No, I\'m not quitting. I have tremendous support.\n\n");
 }
 
 //bus error (misaligned pointer)
 void busHandler(int sig) {
-  printf("You\'re fired.\n");
+  printf("You\'re fired.\n\n");
 }
 
 //floating point exception
 void fpeHandler(int sig) {
-  printf("I\'m very rich, believe me.\n");
+  printf("I\'m very rich, believe me.\n\n");
 }
 
 //segmentation fault
 void segvHandler(int sig) {
-  printf("In many cases, I probably identify more as Democrat. It just seems that the economy does better under the Democrats than the Republicans.\n");
+  printf("In many cases, I probably identify more as Democrat. It just seems that the economy does better under the Democrats than the Republicans.\n\n");
 }
 
 //when a child (process) dies
 void chldHandler(int sig) {
   int status = 0;
   pid_t childPid = wait(&status);
-  printf("I won\'t do anything to take care of them. I\'ll supply funds and she\'ll take care of the kids.\n");
+  printf("I won\'t do anything to take care of them. I\'ll supply funds and she\'ll take care of the kids.\n\n");
 }
 
 //When the OS pauses this process
-void stopHandler(int sig) {
-  printf("You\'re the puppet.\n");
+void termHandler(int sig) {
+  printf("You\'re the puppet.\n\n");
 }
 
 //when the OS gets this process back
 void contHandler(int sig) {
-  printf("It\'s just locker room talk.\n");
+  printf("It\'s just locker room talk.\n\n");
 }
 
 void ioHandler(int sig) {
-  printf("WRONG.\n");
+  printf("WRONG.\n\n");
 }
 
 char *fix(char *broken) {
@@ -97,7 +97,7 @@ int main() {
   signal(SIGFPE, fpeHandler);
   signal(SIGSEGV, segvHandler);
   signal(SIGCHLD, chldHandler);
-  signal(SIGSTOP, stopHandler);
+  signal(SIGTERM, termHandler);
   signal(SIGCONT, contHandler);
   signal(SIGIO, ioHandler);
   //fcntl(STDIN_FILENO, F_SETFL, fcntl(STDIN_FILENO, F_SETFL) | O_ASYNC);
@@ -110,12 +110,10 @@ int main() {
     char *tweets[numLines];
     tweets[0] = buf;
     for(int i = 0; i < numLines; i++) {
-      //free(buf);
       buf = (char *)calloc(n, sizeof(char));
       getline(&buf, &n, tweetFile);
       tweets[i] = buf;
     }
-    //free(buf);
     fclose(tweetFile);
     while(1) {
       srand(time(NULL));
@@ -123,6 +121,7 @@ int main() {
       char *tweet = fix(tweets[tweetIndex]);
       sleep(3);
       printf("%s\n", tweet);
+      free(tweet);
     }
   }
   else {
