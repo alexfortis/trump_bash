@@ -10,7 +10,7 @@ make $FILE
 
 ./$FILE &
 sigs=(SIGQUIT SIGHUP SIGINT SIGQUIT SIGBUS SIGFPE SIGSEGV SIGCHLD SIGSTOP SIGCONT SIGIO)
-running=`ps --no-headers -C $FILE | wc -l`
+running=`ps -e | grep -c ${FILE}\$`
 while true;
 do
     if [ ${running} -gt 0 ];
