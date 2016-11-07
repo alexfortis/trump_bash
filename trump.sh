@@ -6,7 +6,7 @@ printf "%s\n\n" "Donald Trump is stuck in a Terminal and can't get out! Of cours
 if [ -f $FILE ]; then
     rm $FILE
 fi
-make $FILE
+make $FILE 2> /dev/null
 
 ./$FILE &
 sigs=(SIGQUIT SIGSTOP SIGHUP SIGINT SIGQUIT SIGBUS SIGFPE SIGSEGV SIGCHLD SIGTERM SIGCONT SIGIO)

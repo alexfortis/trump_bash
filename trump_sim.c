@@ -1,5 +1,6 @@
 #pragma GCC diagnostic ignored "-Wunused-parameter" 
 #pragma GCC diagnostic ignored "-Wunused-variable"
+#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
 
 #include <stdio.h>
 #include <stdlib.h>
