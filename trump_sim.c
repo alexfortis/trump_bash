@@ -48,6 +48,9 @@ void handler(int sig) {
   case SIGIO: //I/O ready
     printf("WRONG.\n\n");
     break;
+  case SIGILL: //illegal instruction
+    printf("I will defeat ISIS.\n\n");
+    break;
   default: //just in case
     printf("You\'re wrong.\n\n");
   }
@@ -95,6 +98,7 @@ int main() {
   signal(SIGTERM, handler);
   signal(SIGCONT, handler);
   signal(SIGIO, handler);
+  signal(SIGILL, handler);
   //get the file
   size_t n = 141;
   FILE *tweetFile = fopen("trump_tweets.txt", "r");
